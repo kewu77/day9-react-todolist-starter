@@ -1,0 +1,15 @@
+.TodoItemRow{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.input-active{
+    text-align: center;
+}
+.input-inactive{
+    text-align: center;
+    text-decoration-line: line-through;
+}
+

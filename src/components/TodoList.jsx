@@ -1,7 +1,15 @@
+import TodoGroup from "./TodoGroup";
+import TodoGenerator from "./TodoGenerator";
+
 const TodoList = () => {
-  return (
-      <div>This is the TodoList Component.</div>
-  );
+    return (
+        <div>
+            <h2>Todo List</h2>
+            <TodoGroup/>
+            <TodoGenerator/>
+        </div>
+
+    );
 }
 
 export default TodoList
