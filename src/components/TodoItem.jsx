@@ -1,5 +1,5 @@
 import "./CSS/TodoItem.css"
-import {useContext, useState} from "react";
+import {useContext} from "react";
 import {TodoContext} from "../App";
 import {deleteTodo, updateTodoDone} from "../api/todos";
 
@@ -7,8 +7,7 @@ const TodoItem = (props) => {
     const { state, dispatch } = useContext(TodoContext);
     const todoItem = state.filter((item) => item.id === props.id)
     const handleTextClicked = () => {
-        updateTodoDone(todoItem[0]).then((status) => {
-            console.log(status);
+        updateTodoDone({...todoItem[0], done: !todoItem[0].done}).then((status) => {
             dispatch({type:"UPDATE", payload: props.id});
         })
     }
