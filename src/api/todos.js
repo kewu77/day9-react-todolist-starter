@@ -22,7 +22,7 @@ export const deleteTodo = async (id) => {
     return response.status;
 }
 
-export const updateTodoDone = async (Todo) => {
+export const updateTodo = async (Todo) => {
     const response = await instance.put("/todos/"+ Todo.id, Todo);
     return response.status;
 }

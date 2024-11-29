@@ -24,7 +24,7 @@ const TodoGenerator = () => {
     }
 
     return (
-        <div>
+        <div style={{marginBottom:"10px"}}>
             <input maxLength={100} value={text} onChange={handleTestChange}/>
             <button style={{marginLeft : "5px"}} onClick={handleAdd}>add</button>
         </div>

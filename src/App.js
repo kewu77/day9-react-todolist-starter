@@ -16,7 +16,7 @@ function App() {
             <TodoContext.Provider value={{state, dispatch}}>
                 <BrowserRouter>
                     <nav>
-                        <Link to={"/"}> Home </Link> | <Link to={"/done-list"}> Done List</Link>
+                        <Link to={"/"}> Home </Link> | <Link to={"/todo-list"}> {"Todo List"} </Link> | <Link to={"/done-list"}> Done List</Link>
                     </nav>
                     <Routes>
                         <Route path={"*"} element={<RouteNotFound/>}></Route>
