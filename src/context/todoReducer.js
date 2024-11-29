@@ -4,7 +4,7 @@ export const todoReducer = (state, action) => {
     case "INIT":
       return action.payload;
     case "ADD":
-      return [...state, {id: Date.now(), text: action.payload, done: false}];
+      return [...state, action.payload];
     case "DELETE":
       return [...state.filter((item) => item.id !== action.payload)]
     case "UPDATE":

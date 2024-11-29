@@ -12,9 +12,9 @@ const TodoGenerator = () => {
 
     const handleAdd = () => {
         if(text.trim()){
-            addTodo({id: new Date(), text: text, done: true}).then((status) => {
-                if(status === 201)
-                    dispatch({type: "ADD",payload: text});
+            addTodo({text: text, done: false}).then((response) => {
+                if(response.status === 201)
+                    dispatch({type: "ADD",payload: response.data});
                 else
                     alert("FAIL");
             })
