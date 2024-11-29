@@ -1,6 +1,7 @@
 import "./CSS/TodoItem.css"
 import {useContext, useState} from "react";
 import {TodoContext} from "../App";
+import {deleteTodo} from "../api/todos";
 
 const TodoItem = (props) => {
     const { state, dispatch } = useContext(TodoContext);
@@ -10,7 +11,13 @@ const TodoItem = (props) => {
     }
 
     const remove = () => {
-        dispatch({type:"DELETE",payload: props.id});
+        deleteTodo(props.id).then((status) => {
+            if(status === 200)
+                dispatch({type:"DELETE",payload: props.id});
+            else
+                alert("FAIL")
+        })
+
     }
 
     return <div className={"TodoItemRow"}>

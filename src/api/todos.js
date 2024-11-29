@@ -16,3 +16,8 @@ export const addTodo = async (Todo) => {
     const response = await instance.post("/todos",Todo);
     return response.status;
 }
+
+export const deleteTodo = async (id) => {
+    const response = await instance.delete("/todos/" + id);
+    return response.status;
+}
