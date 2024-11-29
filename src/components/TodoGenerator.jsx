@@ -1,5 +1,6 @@
 import {useContext, useState} from "react";
 import {TodoContext} from "../App";
+import {addTodo} from "../api/todos";
 
 const TodoGenerator = () => {
     const [text,setText] = useState("");
@@ -10,16 +11,21 @@ const TodoGenerator = () => {
     }
 
     const handleAdd = () => {
-        if(text !== null && text !== "" && text.length < 100)
-            dispatch({type: "ADD",payload: text});
+        if(text.trim()){
+            addTodo({id: new Date(), text: text, done: true}).then((status) => {
+                if(status === 201)
+                    dispatch({type: "ADD",payload: text});
+                else
+                    alert("FAIL");
+            })
+
+        }
+
     }
-
-
-
 
     return (
         <div>
-            <input value={text} onChange={handleTestChange}/>
+            <input maxLength={100} value={text} onChange={handleTestChange}/>
             <button style={{marginLeft : "5px"}} onClick={handleAdd}>add</button>
         </div>
     );
