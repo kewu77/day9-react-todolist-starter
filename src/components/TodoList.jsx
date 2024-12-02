@@ -19,7 +19,7 @@ const TodoList = () => {
     return (
         <div>
             <h2>{"Todo List"}</h2>
-            {state.length === 0 ? <Spin indicator={<LoadingOutlined style={{ fontSize: 48 }} spin />} /> : <div>
+            {state === undefined || state.length === 0 ? <Spin indicator={<LoadingOutlined style={{ fontSize: 48 }} spin />} /> : <div>
                 <TodoGenerator/>
                 <TodoGroup/>
             </div>}

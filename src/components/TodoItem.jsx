@@ -19,10 +19,7 @@ const TodoItem = (props) => {
 
     const remove = () => {
         deleteTodo(props.id).then((status) => {
-            if(status === 200)
-                dispatch({type:"DELETE",payload: props.id});
-            else
-                alert("FAIL")
+            dispatch({type:"DELETE",payload: props.id});
         })
 
     }

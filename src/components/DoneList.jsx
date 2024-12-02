@@ -5,7 +5,7 @@ const DoneList = () => {
     const { state , dispatch } = useContext(TodoContext);
 
   return (
-      <div>
+      <div style={{display: "flex", flexDirection: "column"}}>
           {state.filter((item => item.done)).map(item => <span>{item.text}</span>)}
       </div>
   );
